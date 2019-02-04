@@ -1,0 +1,5 @@
+module use /afs/kth.se/misc/csc/dept/tmh/hacks/modules
+module add modules/3.1.6
+module add tmhhacks 
+module add htk
+module add wavesurfer

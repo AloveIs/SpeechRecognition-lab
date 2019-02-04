@@ -1,0 +1,25 @@
+====================== HTK Results Analysis =======================
+  Date: Thu Jan 31 20:02:54 2019
+  Ref : Sp2/testprompts.mlf
+  Rec : results/model_Sp1_test_Sp2_grammar_digit_loop/recognized.mlf
+------------------------ Overall Results --------------------------
+SENT: %Correct=0.00 [H=0, S=10, N=10]
+WORD: %Corr=80.00, Acc=-7.50 [H=32, D=0, S=8, I=35, N=40]
+------------------------ Confusion Matrix -------------------------
+       S   e   f   f   n   o   s   s   t   t   z 
+       I   i   i   o   i   n   e   i   h   w   e 
+       L   g   v   u   n   e   v   x   r   o   r 
+           h   e   r   e       e       e       o 
+           t                   n       e          Del [ %c / %e]
+eigh   0   5   0   0   0   0   0   0   0   0   0    0
+five   2   0   2   0   1   0   0   0   0   0   0    0 [40.0/7.5]
+four   0   0   0   4   0   0   0   0   0   0   0    0
+nine   0   0   0   0   4   0   0   0   0   0   0    0
+ one   1   0   0   0   0   1   0   0   0   0   0    0 [50.0/2.5]
+seve   0   0   0   0   0   0   3   0   0   0   0    0
+ six   1   0   0   0   0   0   0   1   0   0   0    0 [50.0/2.5]
+thre   0   0   0   0   0   0   0   0   4   0   0    0
+ two   1   1   0   0   1   0   0   0   0   4   0    0 [57.1/7.5]
+zero   0   0   0   0   0   0   0   0   0   0   4    0
+Ins   25   2   0   0   2   0   0   0   2   4   0
+===================================================================

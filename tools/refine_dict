@@ -1,0 +1,20 @@
+#!/bin/bash
+# refine_dict word_list input_dict output_dict list_of_phonemes
+# performs the following steps:
+# - adds optional short pause at the end of each word in input_dict
+# - adds sentence start and end simbols
+# - outputs the new dictionary in output_dict and a list of phonems in list_of_phonemes
+# If some pronuncations are missing or not defined properly it will generate some error codes.
+#
+# Requires HTK
+#
+# (C) 2018 Giampiero Salvi <giampi@kth.se>
+
+word_list=$1
+input_dict=$2
+output_dict=$3
+list_of_phones=$4
+
+printf "IR\nAS sp\nRS cmu\nMP sil sil sp\n" > add_sp.ded
+printf "SENT-END [] sil\nSENT-START [] sil\n" > start_end_symbols.dic
+HDMan -m -T 2 -w $word_list -n $list_of_phones -g add_sp.ded -i -l $output_dict.log $output_dict $input_dict start_end_symbols.dic

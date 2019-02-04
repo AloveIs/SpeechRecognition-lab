@@ -1,0 +1,39 @@
+WARNING: no script file digits0.dic.ded
+WARNING: no script file start_end_symbols.dic.ded
+Missing Words
+-------------
+SIL
+
+Dictionary Usage Statistics
+---------------------------
+  Dictionary    TotalWords WordsUsed  TotalProns PronsUsed
+ digits0.dic        10         10         10         10
+start_end_sy         2          2          2          2
+  digits.dic        12         12         12         12
+
+13 words required, 1 missing
+
+New Phone Usage Counts
+---------------------
+  1. sil   :     2
+  2. e     :     2
+  3. t     :     2
+  4. sp    :    10
+  5. f     :     2
+  6. aI    :     2
+  7. v     :     2
+  8. O:    :     1
+  9. r     :     3
+ 10. n     :     4
+ 11. w     :     1
+ 12. eh    :     2
+ 13. s     :     3
+ 14. I     :     2
+ 15. k     :     1
+ 16. T     :     1
+ 17. i     :     1
+ 18. u     :     1
+ 19. z     :     1
+ 20. o     :     1
+
+Dictionary digits.dic created

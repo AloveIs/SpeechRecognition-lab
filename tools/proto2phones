@@ -1,0 +1,9 @@
+#!/bin/bash
+rm -f $1/hmm0/hmmdefs
+grep \~o $1/hmm0/proto > $1/hmm0/hmmdefs
+grep -i \<VECSIZE\> $1/hmm0/proto | uniq >> $1/hmm0/hmmdefs
+grep -i \<STREAMINFO\> $1/hmm0/proto | uniq >> $1/hmm0/hmmdefs
+for p in `cat monophones1.lst`; do
+  grep -v -i \<VECSIZE\>  $1/hmm0/proto | grep -v -i \<STREAMINFO\>| sed s\/proto\/$p\/ >> $1/hmm0/hmmdefs
+done
+

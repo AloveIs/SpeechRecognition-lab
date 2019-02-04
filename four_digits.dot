@@ -1,0 +1,135 @@
+digraph g {
+ rankdir=LR
+
+0    [label="!NULL"]
+1    [label="!NULL"]
+2    [label="SENT-START"]
+3    [label="zero"]
+4    [label="!NULL"]
+5    [label="one"]
+6    [label="two"]
+7    [label="three"]
+8    [label="four"]
+9    [label="five"]
+10   [label="six"]
+11   [label="seven"]
+12   [label="eight"]
+13   [label="nine"]
+14   [label="zero"]
+15   [label="!NULL"]
+16   [label="one"]
+17   [label="two"]
+18   [label="three"]
+19   [label="four"]
+20   [label="five"]
+21   [label="six"]
+22   [label="seven"]
+23   [label="eight"]
+24   [label="nine"]
+25   [label="zero"]
+26   [label="!NULL"]
+27   [label="one"]
+28   [label="two"]
+29   [label="three"]
+30   [label="four"]
+31   [label="five"]
+32   [label="six"]
+33   [label="seven"]
+34   [label="eight"]
+35   [label="nine"]
+36   [label="zero"]
+37   [label="!NULL"]
+38   [label="one"]
+39   [label="two"]
+40   [label="three"]
+41   [label="four"]
+42   [label="five"]
+43   [label="six"]
+44   [label="seven"]
+45   [label="eight"]
+46   [label="nine"]
+47   [label="SENT-END"]
+     47   ->1    
+     0    ->2    
+     2    ->3    
+     3    ->4    
+     5    ->4    
+     6    ->4    
+     7    ->4    
+     8    ->4    
+     9    ->4    
+     10   ->4    
+    11   ->4    
+    12   ->4    
+    13   ->4    
+    2    ->5    
+    2    ->6    
+    2    ->7    
+    2    ->8    
+    2    ->9    
+    2    ->10   
+    2    ->11   
+    2    ->12   
+    2    ->13   
+    4    ->14   
+    14   ->15   
+    16   ->15   
+    17   ->15   
+    18   ->15   
+    19   ->15   
+    20   ->15   
+    21   ->15   
+    22   ->15   
+    23   ->15   
+    24   ->15   
+    4    ->16   
+    4    ->17   
+    4    ->18   
+    4    ->19   
+    4    ->20   
+    4    ->21   
+    4    ->22   
+    4    ->23   
+    4    ->24   
+    15   ->25   
+    25   ->26   
+    27   ->26   
+    28   ->26   
+    29   ->26   
+    30   ->26   
+    31   ->26   
+    32   ->26   
+    33   ->26   
+    34   ->26   
+    35   ->26   
+    15   ->27   
+    15   ->28   
+    15   ->29   
+    15   ->30   
+    15   ->31   
+    15   ->32   
+    15   ->33   
+    15   ->34   
+    15   ->35   
+    26   ->36   
+    36   ->37   
+    38   ->37   
+    39   ->37   
+    40   ->37   
+    41   ->37   
+    42   ->37   
+    43   ->37   
+    44   ->37   
+    45   ->37   
+    46   ->37   
+    26   ->38   
+    26   ->39   
+    26   ->40   
+    26   ->41   
+    26   ->42   
+    26   ->43   
+    26   ->44   
+    26   ->45   
+    26   ->46   
+    37   ->47   
+}

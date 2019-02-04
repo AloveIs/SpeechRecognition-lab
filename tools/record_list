@@ -1,0 +1,29 @@
+#!/bin/bash
+# Command syntax: record_list dest_directory < promptfile
+#set -x
+
+rm -f tmp.wav
+rm -f $1/files.scp
+
+# copy standard wav file (in order to define sampling frequency and encoding)
+cp tools/tmp.wav .
+
+# open wavesurfer
+wavesurfer -config config/wavesurfer.conf tmp.wav &
+sleep 2.0
+
+# remove file (in order to know when user presses the save button)
+rm -f tmp.wav
+while read prompt ; do
+  echo $prompt
+
+  while !(test -e tmp.wav) ; do
+     sleep 0.1
+  done
+
+  # File name is in the first field in the prompt line
+  filename=`echo $prompt | gawk '{print $1}'`
+  mv tmp.wav $1/$filename
+  echo $1/$filename >> $1/files.scp
+done
+

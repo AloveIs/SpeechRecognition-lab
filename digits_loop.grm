@@ -1,0 +1,5 @@
+$DIGIT =  zero | one | two | three | four | five | six | seven | eight | nine ;
+
+$SEQ = <$DIGIT>;
+
+( SENT-START $SEQ SENT-END )

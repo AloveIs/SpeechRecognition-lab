@@ -1,0 +1,3 @@
+HParse four_digits.grm four_digits.lat
+tools/lat2pdf four_digits.lat
+evince four_digits.pdf

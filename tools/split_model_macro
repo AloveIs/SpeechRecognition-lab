@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "~o" > $1/hmm0/macros
+grep -i VECSIZE $1/hmm0/hmmdefs >> $1/hmm0/macros
+cat $1/hmm0/vFloors >> $1/hmm0/macros

@@ -1,0 +1,141 @@
+\documentclass[onecolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[swedish,english]{babel}
+\usepackage{geometry}
+
+% instead of defining author, write your names below in Group member names
+\author{}
+\date{}
+\title{DT2112 Lab2 Report\\Practical exercise in automatic speech recognition}
+
+\begin{document}
+\maketitle
+\section*{Group member names}
+\begin{itemize}
+\item Sp1:
+\item Sp2:
+\item Sp3:
+\end{itemize}
+
+\section*{Grammar explanation and graph (four digits):}
+Copy the content of your \verb|four_digits.grm| definition and include the graph you obtained from it. What kind of utterances does this grammar allow? How was this grammar obtained by the rules you defined in \verb|four_digits.grm|?
+\clearpage
+\section*{Grammar explanation and graph (digit loop):}
+Copy the content of your \verb|digit_loop.grm| definition and include the graph you obtained from it. What kind of utterances does this grammar allow? How was this grammar obtained by the rules you defined in \verb|digit_loop.grm|?
+\vspace{0.5\textheight}
+
+\section*{Words and their phonetic transcirption}
+Report the words in your dictionary and the phonetic transcriptions you have defined.
+\clearpage
+
+\section*{Feature extraction parameters}
+These are defined in the configuration file \verb|config/features.cfg|, where times are given in 100 ns units. Convert these values into the units specified in the third column of the table. Print the contents using the command: \verb|cat config/features.cfg|.
+
+The sampling frequency of the recordings is not specified in \verb|config/features.cfg|. To extract it, look at one of the files you have recorded. You can use the command \verb|file| to get information about the file, or use the file browser. In the second case right click on the file and choose the ``Properties'' option and then the ``Audio'' tab. The recordings are for each group member in the \verb|Sp$n/train_data| and \verb|Sp$n/test_data| directories\\[5mm]
+
+%\renewcommand{\arraystretch}{1.8}
+%\begin{tabular}{|l|l|p{0.3\textwidth}|}
+\begin{tabular}{|l|l|l|}
+\hline
+Parameter & Hint & Value \\ \hline
+Sampling frequency (kHz): & check recordings & \hfill (kHz) \\
+Analysis window (ms):     & WINDOWSIZE (100 ns units) & \hfill (ms) \\
+Frame interval (ms):      & TARGETRATE (100 ns units) & \hfill (ms) \\
+Pre-emphasis coeff.       & PREEMPHCOEFF              &    \\
+Filterbank \# channels    & NUMCHANS                  &    \\
+Energy normalization      & ENORMALISE                &    \\
+\# cepstrum coefficients  & NUMCEPS                   &    \\
+Hamming                   & USEHAMMING                &    \\
+\hline
+\end{tabular}
+
+\section*{Answer the following questions:}
+How many speech samples are contained in one analysis window?\\[7mm]
+How much do consequent analysis windows overlap?\\[7mm]
+In a typical four digit utterance that you have recorded, how many analysis windows are used?\\[1mm]
+
+\section*{Acoustic model parameters}
+Check the prototype model definition in the file \verb|proto.mmf| and answer the following questions with the help of the HTK Book:\\
+What kind of features are used? (hint: defined in the \verb|~o| macro)\\[7mm]
+What is the size of the feature vector?\\[7mm]
+How many states are used per phoneme?\\[7mm]
+Draw the topology (states and transitions) of the prototype model (Hint: \verb|TransP| is the transition probability matrix).
+% \begin{tabular}{|p{0.6\textwidth}|c|p{0.15\textwidth}|}
+% \hline
+% Parameter & Hint & Value \\ \hline
+% Context-dependent models (yes/no) & - & No \\
+% Tying (yes/no)                    & - & No \\
+% Acoustic feature type             & \verb|<MFCC-...>| &  \\
+% Acoustic vector size              & \verb|VecSize|    &    \\
+% \# states per phone model (incl. start and end states)  & \verb|NumStates| & \\
+% \# mixture components per state   & -    & 1 \\
+% \hline
+% \end{tabular}
+
+\clearpage
+\section*{Recognition evaluation}
+Speaker dependent results: Matching the test speaker against his/her own trained models. Cross-speaker results: Matching the test speaker against another speaker’s models.\\[5mm]
+%\begin{tabular}{|p{0.2\textwidth}|c|c|r|r|r|}
+\begin{tabular}{|l|c|c|r|r|r|}
+\hline
+\textbf{4-digits}  & Training speaker(s) & Test speaker(s) & Accuracy \% & \#Ins & \#Del \\
+\hline
+Speaker dependent & Sp1 & Sp1 & & & \\\hline
+Speaker dependent & Sp2 & Sp2 & & & \\\hline
+Speaker dependent & Sp3 & Sp3 & & & \\\hline
+Cross-speaker & Sp1 & Sp2 & & & \\\hline
+Cross-speaker & Sp1 & Sp3 & & & \\\hline
+Cross-speaker & Sp2 & Sp1 & & & \\\hline
+Cross-speaker & Sp2 & Sp3 & & & \\\hline
+Cross-speaker & Sp3 & Sp1 & & & \\\hline
+Cross-speaker & Sp3 & Sp2 & & & \\\hline
+\end{tabular}\\[5mm]
+%\begin{tabular}{|p{0.2\textwidth}|c|c|r|r|r|}
+\begin{tabular}{|l|c|c|r|r|r|}
+\hline
+\textbf{digit-loop}  & Training speaker(s) & Test speaker(s) & Accuracy \% & \#Ins & \#Del \\
+\hline
+Speaker dependent & Sp1 & Sp1 & & & \\\hline
+Speaker dependent & Sp2 & Sp2 & & & \\\hline
+Speaker dependent & Sp3 & Sp3 & & & \\\hline
+Cross-speaker & Sp1 & Sp2 & & & \\\hline
+Cross-speaker & Sp1 & Sp3 & & & \\\hline
+Cross-speaker & Sp2 & Sp1 & & & \\\hline
+Cross-speaker & Sp2 & Sp3 & & & \\\hline
+Cross-speaker & Sp3 & Sp1 & & & \\\hline
+Cross-speaker & Sp3 & Sp2 & & & \\\hline
+\end{tabular}
+
+\clearpage
+\section*{Discussion of the results}
+Common digit confusions:
+\vspace{0.2\textheight}
+
+\noindent These might have been caused by:
+\vspace{0.4\textheight}
+
+\noindent Compare and discuss the difference between the cross-speaker and the speaker-dependent results. 
+\vspace{0.4\textheight}
+
+\noindent How do the performance and types of errors differ between recognition of fixed and non-restricted number of digits (digit loop)?
+\vspace{0.3\textheight}
+
+\section*{Experience with the live recogniser}
+\noindent how does the recogniser behave when you use it live?
+\vspace{0.3\textheight}
+
+\noindent what is the effect of varying the speaking rate?
+\clearpage
+
+\noindent what is the effect of varying the insertion penalty?
+\vspace{0.3\textheight}
+
+\noindent how does the recogniser cope with long pauses between words? Can you change the behaviour using the insertion penalty?
+\vspace{0.3\textheight}
+
+\noindent what happens when you include an optional silence ``word'' between each digits in the grammar?
+\clearpage
+
+\noindent what words did you add to the dictionary and grammar? How did the recogniser perform with them?
+
+\end{document}
